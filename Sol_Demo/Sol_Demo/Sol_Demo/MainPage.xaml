@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Sol_Demo.MainPage">
+
+    <ContentPage.Resources>
+        <Style x:Key="stlContactBtn" TargetType="Button">
+
+            <Setter Property="WidthRequest"     Value="56" />
+            <Setter Property="HeightRequest"    Value="56" />
+            <Setter Property="CornerRadius"     Value="28" />
+            <Setter Property="TranslationX"     Value="45" />
+        </Style>
+
+        <Style x:Key="stlBoardTitle" TargetType="Label">
+            <Setter Property="Padding"           Value="0,30,0,5" />
+            <Setter Property="TextColor"         Value="#a5a2a2" />
+            <Setter Property="FontSize"          Value="16" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+
+        <Style x:Key="stlBoardDesc" TargetType="Label">
+            <Setter Property="FontAttributes"    Value="Bold" />
+            <Setter Property="FontSize"          Value="16" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+
+        <Style x:Key="stlMainFrame" TargetType="Frame">
+            <Setter Property="CornerRadius" Value="40"></Setter>
+            <Setter Property="VerticalOptions" Value="EndAndExpand"></Setter>
+            <!--<Setter Property="TranslationY"    Value="{OnPlatform iOS='-150', Android='-33'}" />-->
+
+            <Setter Property="HasShadow"       Value="False" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid BackgroundColor="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" Source="https://quotepark.com/media/authors/hatake-kakashi.png" VerticalOptions="Start" />
+
+        <Frame x:Name="frm" Grid.Row="0" Style="{StaticResource stlMainFrame}" IsClippedToBounds="False"  BackgroundColor="White">
+
+            <Grid BackgroundColor="Transparent" TranslationY="-50">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="1"  HorizontalOptions="End"  Style="{StaticResource stlContactBtn}" ImageSource="Correo" BackgroundColor="Blue"/>
+                    <Button Grid.Row="0" Grid.Column="2"  HorizontalOptions="Start"  Style="{StaticResource stlContactBtn}" ImageSource="Phone" BackgroundColor="Blue"/>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Kakashi Hatake" FontAttributes="Bold" FontSize="30" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Hidden Leaf Village" Grid.ColumnSpan="3" TextColor="#a5a2a2" FontSize="16" />
+                    <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Padding="0,10,0,0" FontSize="16">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Email: " FontAttributes="Bold" />
+                                <Span Text="hatake.kakashi@hiddenleafvillage.com" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="3" Grid.Column="0" Text="Publications" Style="{StaticResource stlBoardTitle}" />
+                    <Label Grid.Row="4" Grid.Column="0" Text="678" Style="{StaticResource stlBoardDesc}" />
+
+                    <Label Grid.Row="3" Grid.Column="1" Text="Following" Style="{StaticResource stlBoardTitle}" />
+                    <Label Grid.Row="4" Grid.Column="1" Text="340" Style="{StaticResource stlBoardDesc}" />
+
+                    <Label Grid.Row="3" Grid.Column="2" Text="Followers" Style="{StaticResource stlBoardTitle}" />
+                    <Label Grid.Row="4" Grid.Column="2" Text="67k" Style="{StaticResource stlBoardDesc}" />
+
+                    <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" TextColor="White" BackgroundColor="#2193f3" Text="Follow" />
+                </Grid>
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentPage>
